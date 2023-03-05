@@ -1,11 +1,9 @@
+/*This code defines a TypeScript class called Comment*/
 export class Post {
     id: number;
     userId: number;
     title: string;
     body: string;
-    /*
-    comments: Comment[] | null;
-    */
 
     constructor(
         id: number,

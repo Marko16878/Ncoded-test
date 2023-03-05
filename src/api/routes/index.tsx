@@ -6,5 +6,5 @@ export const PostsRouts = Object.freeze({
 })
 
 export const CommentsRouts = Object.freeze({
-    GET_COMMENTS_BY_POST_ID: ''
+    GET_COMMENTS_BY_POST_ID: '/comments?postId='
 })

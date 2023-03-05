@@ -16,7 +16,7 @@ function NavBar() {
     return (
         <>
             <div className="nav-bar lg">
-                <Link to={"/home"} className={location.pathname === "/home" ? "nav-bar-link active" : "nav-bar-link"}>
+                <Link to={"/"} className={location.pathname === "/home" ? "nav-bar-link active" : "nav-bar-link"}>
                     <AiFillHome size={20} />
                     <span>HOME</span>
                 </Link>
@@ -35,7 +35,7 @@ function NavBar() {
                 {
                     menuIsOpen &&
                     <div id="menu">
-                        <Link to={"/home"} className={location.pathname === "/home" ? "nav-bar-link active" : "nav-bar-link"}>
+                        <Link to={"/"} className={location.pathname === "/home" ? "nav-bar-link active" : "nav-bar-link"}>
                             <AiFillHome size={20} />
                             <span>HOME</span>
                         </Link>

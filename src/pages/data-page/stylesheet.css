@@ -1,3 +1,7 @@
+/*The following code contains CSS selectors targeting different elements within the data-page-container*/
+/*The comments below provide an overview of the different selectors and their intended purpose.*/
+
+/*Selector targeting the data-page-container element*/
 #data-page-container {
     margin-top: 50px;
     display: flex;
@@ -8,6 +12,7 @@
     min-height: calc(100vh - 50px);
 }
 
+/*Selector targeting the first child div element of the data-page-container*/
 #data-page-container>div:nth-child(1) {
     display: flex;
     flex-direction: row;
@@ -20,11 +25,14 @@
     background-color: #f2f2f2;
     min-height: 100px;
 }
+
+/*Selector targeting the second child div element of the data-page-container*/
 #data-page-container>div:nth-child(2) {
     height: 20px;
-
 }
 
+/*Selector targeting the div elements that are
+direct children of the first child div element of the data-page-container*/
 #data-page-container>div:nth-child(1)>div {
     width: 20%;
     margin: 15px;
@@ -38,6 +46,8 @@
     text-align: center;
 }
 
+/*Selector targeting the button elements that are direct children of the div element
+that is a direct child of the first child div element of the data-page-container*/
 #data-page-container>div:nth-child(1)>div>button {
     width: 70%;
     padding: 15px;
@@ -47,10 +57,11 @@
     border: none;
 }
 
+/*Selector targeting the third child div element of the data-page-container*/
 #data-page-container>div:nth-child(3) {
     display: flex;
     flex-direction: column;
-    overflow-x: scroll;
+    overflow: auto;
     width: 95%;
     max-width: 1200px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
@@ -61,6 +72,8 @@
     padding-top: 50px;
 }
 
+/*Selector targeting the div elements that are direct children of
+the third child div element of the data-page-container*/
 #data-page-container>div:nth-child(3)>div {
     height: 100%;
     overflow-y: scroll;
@@ -68,43 +81,34 @@
     min-width: 1000px;
 }
 
+/*Selector targeting the scrollbar of the div elements
+that are direct children of the third child div element of the data-page-container*/
 #data-page-container>div:nth-child(3)>div::-webkit-scrollbar {
     display: none;
 }
 
-#data-page-container>div:nth-child(3)::-webkit-scrollbar {
-    height: 15px;
-}
-
-#data-page-container>div:nth-child(3)::-webkit-scrollbar-track {
-    background: #dbdbdb;
-}
-
-#data-page-container>div:nth-child(3)::-webkit-scrollbar-thumb {
-    background: #999999;
-}
-
-#data-page-container>div:nth-child(3)::-webkit-scrollbar-thumb:hover {
-    background: #555;
-}
-
+/*Selector targeting the table element that is a descendant of the data-page-container*/
 #data-page-container>div>table {
     position: absolute;
     top: 0;
 }
 
+/*Selector targeting the table element that is a descendant of the data-page-container*/
 #data-page-container table {
     border-collapse: collapse;
     width: 100%;
 }
 
+/*Selector targeting the td elements that are descendants of the data-page-container*/
 #data-page-container td {
     padding: 10px;
     margin: 0px;
     border: 1px solid #dbdbdb;
     color: #0c0c0f;
+    cursor: pointer;
 }
 
+/*Selector targeting the th elements that are descendants of the data-page-container*/
 #data-page-container th {
     background-color: #0c0c0f;
     color: #f5f5fa;
@@ -113,14 +117,19 @@
     margin: 0px;
 }
 
+/*Selector targeting the even numbered tr elements that are descendants of the tbody element
+which is a child of the data-page-container*/
 #data-page-container tbody>tr:nth-child(even) {
     background-color: #f2f2f2;
 }
 
+/*Selector targeting the odd numbered tr elements that are descendants of the tbody element
+which is a child of the data-page-container*/
 #data-page-container tbody>tr:nth-child(odd) {
     background-color: #ffffff;
 }
 
+/*Selector targeting the first three th and td elements that are descendants of the data-page-container*/
 #data-page-container th:nth-child(-n+3),
 #data-page-container td:nth-child(-n+3) {
     text-align: center;
@@ -129,6 +138,7 @@
     box-sizing: border-box;
 }
 
+/*Selector targeting the fourth th and td elements that are descendants of the data-page-container*/
 #data-page-container th:nth-child(4),
 #data-page-container td:nth-child(4) {
     width: 25%;
@@ -136,24 +146,20 @@
     box-sizing: border-box;
 }
 
+/*Selector targeting the fifth th and td elements that are descendants of the data-page-container*/
 #data-page-container th:nth-child(5),
 #data-page-container td:nth-child(5) {
     width: 45%;
     min-width: 450px;
     box-sizing: border-box;
 }
-
-td>button {
+/*Selector targeting the button elements that are descendants of the td elements
+that are descendants of the data-page-container*/
+#data-page-container td>button {
     background-color: #cc0000;
     border: none;
     padding: 5px;
     color: #f5f5fa;
     font-family: 'Lato' !important;
-}
-
-.post-button {
-    background-color: #cc0000;
-    margin: 100px;
-    font-family: 'Lato' !important;
-    font-weight: bold;
+    cursor: pointer;
 }

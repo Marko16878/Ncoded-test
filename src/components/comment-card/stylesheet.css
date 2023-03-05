@@ -1,0 +1,27 @@
+/*Selector targeting the comment-card-container element*/
+.comment-card-container {
+    width: calc(100% - 40px);
+    border-top: 1px solid rgb(230, 230, 230);
+    margin: 20px;
+    padding: 10px 0px;
+}
+
+/*Selector targeting all paragraph elements that are direct children of the comment-card-container element*/
+.comment-card-container>p {
+    inline-size: 100%;
+    overflow-wrap: break-word;
+}
+
+/*Selector targeting all div elements that are direct children of the comment-card-container element*/
+.comment-card-container>div {
+    font-size: small;
+    color: grey;
+    display: flex;
+    flex-direction: row;
+}
+
+/*Selector targeting all div elements that are direct children of a div element that is a direct child of the comment-card-container element*/
+.comment-card-container>div>div {
+    width: 30%;
+    max-width: 100px;
+}
