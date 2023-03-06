@@ -3,23 +3,12 @@ import { useDispatch, useSelector } from 'react-redux'
 import Actions from "../../../store/actions"
 import { Comment } from "../../../models/commentModel"
 import CommentCard from "../../card/comment-card/comment-card"
-import Modal from "../modal-base/modal-base"
 
-/*
-CommentsModal is a component that renders a modal to display comments for a selected post.
-*/
 function CommentsModal() {
 
-    /*
-    The useDispatch and useSelector hooks from the react-redux module are used
-    to dispatch actions and retrieve data from the Redux store.
-    */
     const dispatch = useDispatch()
     const commentsSessionState = useSelector((state: any) => state.commentsSession)
 
-    /*
-    handleClose function to close the modal and reset selected post and comments.
-    */
     const handleClose = () => {
         dispatch(Actions.setPost(null))
         dispatch(Actions.setComments(null))

@@ -6,7 +6,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    background-image: linear-gradient(to top, #00c6fb 90%, #005bea 100%);
+    background-image: linear-gradient(to top, #00c6fb 0%, #005bea 100%);
     min-height: calc(100vh - 50px);
 
     &>div:nth-child(1) {

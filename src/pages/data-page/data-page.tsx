@@ -1,6 +1,3 @@
-/*
-The import statements at the beginning of the code import the required modules and stylesheets.
-*/
 import { Api } from "../../api";
 import "./stylesheet.scss"
 import { useDispatch, useSelector } from 'react-redux'
