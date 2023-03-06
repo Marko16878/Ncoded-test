@@ -1,8 +1,9 @@
-import "./stylesheet.css"
+import "./stylesheet.scss"
 import { useDispatch, useSelector } from 'react-redux'
-import Actions from "../../store/actions"
-import { Comment } from "../../models/commentModel"
-import CommentCard from "../comment-card/comment-card"
+import Actions from "../../../store/actions"
+import { Comment } from "../../../models/commentModel"
+import CommentCard from "../../card/comment-card/comment-card"
+import Modal from "../modal-base/modal-base"
 
 /*
 CommentsModal is a component that renders a modal to display comments for a selected post.
@@ -41,11 +42,11 @@ function CommentsModal() {
                         <div>Comments</div>
                         {
                             commentsSessionState.comments.length > 0 ?
-                            commentsSessionState.comments.map((item: Comment) =>
-                                <CommentCard key={"comment-" + item.id} data={item} />
-                            )
-                            :
-                            <p>No comments</p>
+                                commentsSessionState.comments.map((item: Comment) =>
+                                    <CommentCard key={"comment-" + item.id} data={item} />
+                                )
+                                :
+                                <p>No comments</p>
                         }
                     </div>
                     <div onClick={handleClose}>

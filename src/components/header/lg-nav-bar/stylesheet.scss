@@ -1,0 +1,36 @@
+@import "../../../assets/scss/variables.scss";
+
+#lg-nav-bar-container {
+    display: flex;
+    height: 50px;
+    background-color: $secondary-background-color;
+    flex-direction: row;
+    color: $light-text-color;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 0px 20px;
+    z-index: 9999;
+
+    & .lg-nav-bar-link {
+        display: flex;
+        align-items: center;
+        margin-right: 40px;
+        text-decoration: none;
+        color: $light-text-color;
+
+        &>span {
+            margin-left: 5px;
+        }
+
+        &:hover {
+            color: $active-link-color;
+        }
+    }
+
+    & .active {
+        color: $active-link-color;
+    }
+}

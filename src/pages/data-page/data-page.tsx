@@ -2,22 +2,13 @@
 The import statements at the beginning of the code import the required modules and stylesheets.
 */
 import { Api } from "../../api";
-import "./stylesheet.css"
+import "./stylesheet.scss"
 import { useDispatch, useSelector } from 'react-redux'
 import Actions from "../../store/actions";
 import { Post } from "../../models/postModel";
 
-/*
-The code defines a functional component named DataPage that fetches, creates,
-updates, and deletes posts using an external API. The component also displays
-the posts in a table and allows the user to select a post to view its comments.
-*/
 function DataPage() {
 
-    /*
-    The useDispatch and useSelector hooks from the react-redux module are used
-    to dispatch actions and retrieve data from the Redux store.
-    */
     const dispatch = useDispatch()
     const postSessionState = useSelector((state: any) => state.postsSession)
 
@@ -43,10 +34,6 @@ function DataPage() {
         return words.join(' ');
     }
 
-    /*
-    The GetPosts function fetches all posts using the Api.getPosts() method
-    and dispatches appropriate actions to update the store with the received data.
-    */
     const GetPosts = async () => {
         window.scrollTo({ left: 0, top: document.body.scrollHeight, behavior: "smooth" });
         dispatch(Actions.startLoadingPosts("Loading posts..."))
@@ -60,10 +47,6 @@ function DataPage() {
             })
     }
 
-    /*
-    The CreatePost function creates a new post using the Api.createPost() method
-    with randomly generated title and body values and updates the store with the new post data.
-    */
     const CreatePost = async () => {
         window.scrollTo({ left: 0, top: document.body.scrollHeight, behavior: "smooth" });
         dispatch(Actions.startLoadingPosts("Loading: Create new post..."))
@@ -90,10 +73,6 @@ function DataPage() {
             })
     }
 
-    /*
-    The UpdatePost function updates an existing post using the Api.updatePost() method
-    with randomly generated title and body values and updates the store with the updated post data.
-    */
     const UpdatePost = async () => {
         window.scrollTo({ left: 0, top: document.body.scrollHeight, behavior: "smooth" });
         dispatch(Actions.startLoadingPosts("Loading: Updateing post..."))
@@ -121,10 +100,6 @@ function DataPage() {
             })
     }
 
-    /*
-    The DeletePost function deletes a post using the Api.deletePost() method
-    and updates the store by removing the deleted post from the state.
-    */
     const DeletePost = async (id: number) => {
         window.scrollTo({ left: 0, top: document.body.scrollHeight, behavior: "smooth" });
         dispatch(Actions.startLoadingPosts("Loading: Deleteing post..."))
@@ -140,10 +115,6 @@ function DataPage() {
             })
     }
 
-    /*
-    The GetComments function fetches comments for a selected post using
-    the Api.getCommentByPostId() method and updates the store with the received comment data.
-    */
     const GetComments = async (postId: number) => {
         dispatch(Actions.startLoadingComments("Loading comments..."))
         await Api.getCommentByPostId(postId)
@@ -156,11 +127,6 @@ function DataPage() {
             })
     }
 
-    /*
-    The return statement renders the component, which displays three buttons for fetching,
-    creating, and updating posts, a table of posts, and a message indicating
-    the loading status and any error messages.
-    */
     return (
         <>
             <div id="data-page-container">
@@ -177,7 +143,7 @@ function DataPage() {
                     </div>
                     <div>
                         <h2>Update post</h2>
-                        <p>The new post with id=1 will be updated with title and body random values.</p>
+                        <p>The post with id=1 will be updated with title and body random values.</p>
                         <button onClick={UpdatePost}>Update</button>
                     </div>
                 </div>
@@ -197,11 +163,6 @@ function DataPage() {
                     <div>
                         <table>
                             <tbody>
-                                {/*
-                                Each row of the table contains the post data and a delete button that
-                                triggers the DeletePost function. The onClick event on each row triggers
-                                the GetComments function to fetch and display the comments for the selected post.
-                                */}
                                 {
                                     postSessionState.posts.length > 0 &&
                                     postSessionState.posts.map((item: Post) =>

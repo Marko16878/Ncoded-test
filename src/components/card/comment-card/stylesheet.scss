@@ -1,0 +1,25 @@
+@import '../../../assets/scss/variables.scss';
+
+.comment-card-container {
+    width: calc(100% - 40px);
+    border-top: 1px solid $border-color;
+    margin: 20px;
+    padding: 10px 0px;
+
+    & >p {
+        inline-size: 100%;
+        overflow-wrap: break-word;
+    }
+
+    & >div {
+        font-size: small;
+        color: $secondary-text-color;
+        display: flex;
+        flex-direction: row;
+
+        & >div {
+            width: 30%;
+            max-width: 100px;
+        }
+    }
+}

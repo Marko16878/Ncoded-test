@@ -1,10 +1,6 @@
-import UserCard from "../../components/user-card/user-card";
-import "./stylesheet.css";
+import UserCard from "../../components/card/user-card/user-card";
+import "./stylesheet.scss";
 
-/*
-This code defines a HomePage component that renders a UserCard component inside a container
-with an id of "home-page-container".
-*/
 function HomePage() {
     return (
         <div id="home-page-container">

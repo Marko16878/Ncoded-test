@@ -1,5 +1,5 @@
-import "./stylesheet.css"
-import image from "../../assets/images/user-image.jpg"
+import "./stylesheet.scss"
+import image from "../../../assets/images/user-image.jpg"
 import { IoIosMail } from 'react-icons/io';
 import { BsGithub } from 'react-icons/bs';
 import { Link } from "react-router-dom";

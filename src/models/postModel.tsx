@@ -1,4 +1,3 @@
-/*This code defines a TypeScript class called Comment*/
 export class Post {
     id: number;
     userId: number;
