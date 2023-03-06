@@ -1,8 +1,9 @@
-#home-page-container {
+.root-container {
     margin-top: 50px;
     background-image: linear-gradient(to top, #00c6fb 0%, #005bea 100%);
     display: flex;
     min-height: calc(100vh - 50px);
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }

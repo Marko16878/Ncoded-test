@@ -7,6 +7,7 @@ import DataPage from './pages/data-page/data-page';
 import CommentsModal from './components/modal/comments-modal/comments-modal';
 import NoPage from './pages/no-page/no-page';
 import HOCNavBar from './HOC/hoc-nav-bar/hoc-nav-bar';
+import PostsLoader from './components/loader/posts-loader/posts-loader';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="*" element={<NoPage />} />
       </Routes>
       <CommentsModal />
+      <PostsLoader />
     </BrowserRouter>
   );
 }

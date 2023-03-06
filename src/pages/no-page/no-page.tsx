@@ -1,10 +1,10 @@
-import "./stylesheet.scss"
+import Container from "../../components/container/root-container/root-container";
 
 function NoPage(){
     return(
-        <div id="no-page-container">
+        <Container>
             <h1>Page not found!</h1>
-        </div>
+        </Container>
     )
 }
 

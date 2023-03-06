@@ -1,11 +1,11 @@
 import UserCard from "../../components/card/user-card/user-card";
-import "./stylesheet.scss";
+import Container from "../../components/container/root-container/root-container";
 
 function HomePage() {
     return (
-        <div id="home-page-container">
+        <Container>
             <UserCard />
-        </div>
+        </Container>
     )
 }
 
