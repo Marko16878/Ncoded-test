@@ -1,0 +1,16 @@
+.action-card-container {
+    width: 20%;
+    margin: 15px;
+    min-width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    box-sizing: border-box;
+    text-align: center;
+
+    &>.action-card-button{
+        width: 70%;
+    }
+}

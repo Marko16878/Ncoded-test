@@ -2,6 +2,7 @@ import './stylesheet.scss'
 import { Post } from "../../../models/postModel";
 import { useDispatch } from 'react-redux'
 import Actions from '../../../store/actions';
+import Button from '../../button/button';
 
 interface Props{
     data: Post[];
@@ -33,7 +34,7 @@ function ScrollableTable({data, handleSelect, handleDelete}:Props) {
                             data.length > 0 &&
                             data.map((item: Post) =>
                                 <tr key={"post-" + item.id} onClick={(event)=>{event.stopPropagation(); handleSelect(item.id); dispatch(Actions.setPost(item))}}>
-                                    <td><button onClick={(event) => { event.stopPropagation(); handleDelete(item.id)}}>Delete</button></td>
+                                    <td><Button bgColor='#cc0000' onClick={() => { handleDelete(item.id)}}>Delete</Button></td>
                                     <td>{item.id}</td>
                                     <td>{item.userId}</td>
                                     <td>{item.title}</td>

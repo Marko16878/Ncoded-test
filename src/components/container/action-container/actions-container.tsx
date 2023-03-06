@@ -3,6 +3,7 @@ import { Api } from "../../../api";
 import { useDispatch, useSelector } from 'react-redux'
 import { Post } from "../../../models/postModel";
 import './stylesheet.scss'
+import ActionCard from "../../card/action-card/action-card";
 
 function ActionContainer() {
 
@@ -55,13 +56,13 @@ function ActionContainer() {
         })
             .then((response) => {
                 dispatch(Actions.setPosts([
+                    ...postSessionState.posts,
                     {
                         id: response.data.id,
                         userId: response.data.data.userId,
                         title: response.data.data.title,
                         body: response.data.data.body
-                    },
-                    ...postSessionState.posts
+                    }
                 ]))
                 dispatch(Actions.endLoadingPosts(""))
             })
@@ -98,21 +99,24 @@ function ActionContainer() {
     }
     return (
         <div className="action-container">
-            <div>
-                <h2>Get all posts</h2>
-                <p>All posts will be getting and displayed in the table.</p>
-                <button onClick={GetPosts}>Get</button>
-            </div>
-            <div>
-                <h2>Create new post</h2>
-                <p>The new post will be created with userId=1 and title and body random values.</p>
-                <button onClick={CreatePost}>Create</button>
-            </div>
-            <div>
-                <h2>Update post</h2>
-                <p>The post with id=1 will be updated with title and body random values.</p>
-                <button onClick={UpdatePost}>Update</button>
-            </div>
+            <ActionCard
+                title="Get all posts"
+                body="All posts will be getting and displayed in the table."
+                buttonText="Get"
+                onButtonClick={()=>{GetPosts()}}
+            />
+            <ActionCard
+                title="Create new post"
+                body="The new post will be created with userId=1 and title and body random values."
+                buttonText="Create"
+                onButtonClick={()=>{CreatePost()}}
+            />
+            <ActionCard
+                title="Update post"
+                body="The post with id=1 will be updated with title and body random values."
+                buttonText="Update"
+                onButtonClick={()=>{UpdatePost()}}
+            />
         </div>
     )
 }
